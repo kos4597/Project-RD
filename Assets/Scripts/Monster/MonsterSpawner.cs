@@ -28,17 +28,17 @@ public class MonsterSpawner : MonoBehaviour
 
         for(int i = 0; i < 10; i++)
         {
-            monsterList.Add(new MonsterData(201, 2, 1f, "Ws_Bird"));
+            monsterList.Add(new MonsterData(201, 2, 1f, 1, "Ws_Bird"));
         }
 
         for (int i = 0; i < 10; i++)
         {
-            monsterList.Add(new MonsterData(202, 4, 1.2f, "Ws_Law"));
+            monsterList.Add(new MonsterData(202, 4, 1.2f, 2, "Ws_Law"));
         }
 
         for (int i = 0; i < 10; i++)
         {
-            monsterList.Add(new MonsterData(203, 10, 0.5f, "Ws_Snail"));
+            monsterList.Add(new MonsterData(203, 10, 0.5f, 3, "Ws_Snail"));
         }
 
         monsterPoolDic.Add(1, monsterList);
@@ -60,7 +60,7 @@ public class MonsterSpawner : MonoBehaviour
     private IEnumerator SpawnCoroutine()
     {
         WaitForSeconds delay = new WaitForSeconds(3f);
-        WaitForSeconds delay2 = new WaitForSeconds(2f);
+        WaitForSeconds delay2 = new WaitForSeconds(1f);
 
         yield return delay;
 

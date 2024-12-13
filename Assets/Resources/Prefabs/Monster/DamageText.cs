@@ -37,12 +37,11 @@ public class DamageText : MonoBehaviour
             Color temp = damageText.color;
 
             temp.a -= 0.05f;
-
+            damageText.transform.position += Vector3.up * 0.025f;
             damageText.color = temp;
             yield return new WaitForSeconds(0.1f);
         }
 
-        yield return new WaitForSeconds(1f);
         DestroyText();
 
         DestroyCallback?.Invoke();

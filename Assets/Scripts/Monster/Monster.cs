@@ -77,7 +77,7 @@ public class Monster : MonoBehaviour
             }
 
             BattleManager.Instance.waveList.Remove(this);
-            BattleManager.Instance.Gold += 1;
+            BattleManager.Instance.Gold += monsterData.Gold;
             BattleManager.Instance.SetGoldUI();
             Destroy(gameObject);
         }
@@ -106,11 +106,12 @@ public class Monster : MonoBehaviour
 
 public struct MonsterData
 {
-    public MonsterData(long _id, int _hp, float _speed, string _spriteName)
+    public MonsterData(long _id, int _hp, float _speed, int _gold, string _spriteName)
     {
         id = _id;
         hp = _hp;
         speed = _speed;
+        gold = _gold;
         spriteName = _spriteName;
     }
 
@@ -127,6 +128,10 @@ public struct MonsterData
 
     private float speed;
     public float Speed { get { return speed; } private set { speed = value; } }
+
+    private int gold;
+
+    public int Gold { get { return gold; } private set { gold = value; } }
 
     private string spriteName;
     public string SpriteName { get { return spriteName; } private set { spriteName = value; } }
